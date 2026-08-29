@@ -2,7 +2,7 @@ import re
 from typing import Optional, Iterable
 
 
-# ========== 基础脱敏函数 ==========
+# ========== 基础脱敏函数（保留但不再使用） ==========
 
 def mask_phone(v: str) -> str:
     if not v or len(v) < 7:
@@ -58,7 +58,7 @@ def mask_address(v: str) -> str:
     return v[:2] + "****" if len(v) > 2 else v + "****"
 
 
-# ========== 分发器 ==========
+# ========== 分发器（保留但不再使用） ==========
 
 def mask_value(field: str, v: Optional[str]) -> str:
     if not v:
@@ -86,11 +86,14 @@ def mask_value(field: str, v: Optional[str]) -> str:
     return v
 
 
-# ========== list 工具 ==========
+# ========== list 工具（已修改为不脱敏） ==========
 
 def mask_list(field: str, values: Iterable) -> list[str]:
+    """
+    返回原始值列表（去重、过滤空值），不进行脱敏。
+    """
     return list({
-        mask_value(field, v)
+        str(v).strip()
         for v in values
         if v is not None and str(v).strip()
     })
