@@ -13,7 +13,7 @@
 ### 🚀 Develop
 使用我们的安装脚本, 快速构建开发环境.
 ```bash
-curl -LsSf https://raw.githubusercontent.com/garinasset/leak-check/refs/heads/main/install.sh | bash
+curl -LsSf https://raw.githubusercontent.com/whaleincup/leak-check/refs/heads/main/install.sh | bash
 ```
 
 ### 📊 Database
